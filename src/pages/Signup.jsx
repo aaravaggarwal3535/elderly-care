@@ -58,7 +58,7 @@ const Signup = () => {
     setEmailExists(false);
 
     try {
-      const response = await fetch('http://0.0.0.0:8000/signup', {
+      const response = await fetch('https://elderly-care-backend-to4y.onrender.com/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

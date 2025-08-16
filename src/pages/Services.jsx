@@ -69,7 +69,7 @@ const PatientFamilyServices = ({ user }) => {
     try {
       console.log('Submitting request with user:', user); // Debug log
       
-      const response = await fetch('http://localhost:8000/service-request', {
+      const response = await fetch('https://elderly-care-backend-to4y.onrender.com/service-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -229,7 +229,7 @@ const CaregiverServices = ({ user }) => {
   // Fetch pending requests
   const fetchRequests = async () => {
     try {
-      const response = await fetch('http://localhost:8000/service-requests/pending');
+      const response = await fetch('https://elderly-care-backend-to4y.onrender.com/service-requests/pending');
       if (response.ok) {
         const data = await response.json();
         setRequests(data.requests || []);
@@ -248,7 +248,7 @@ const CaregiverServices = ({ user }) => {
     setProcessingRequest(requestId);
     
     try {
-      const response = await fetch(`http://localhost:8000/service-request/${requestId}/${action}`, {
+      const response = await fetch(`https://elderly-care-backend-to4y.onrender.com/service-request/${requestId}/${action}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
